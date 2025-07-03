@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ionx movie</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../src/scripts/inox.js"></script>
+</head>
+
+<body class="container-fluid">
+    <div>
+        <button id="button-container" class="btn btn-primary m-2" data-bs-target="#quick-booking" data-bs-toggle="modal">Quick Booking
+        </button>
+    </div>
+
+    <div class="modal fade" id="quick-booking">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 id="booking-title">Quick Booking </h4>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body ">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <select class="form-select" id="lstmovie">
+                                <option value="">Select Movie</option>
+                                <option value="BLACK BAG">BLACK BAG</option>
+                                 <option value="SIKANDAR">SIKANDAR</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="form-select" id="lstdate">
+                                <option value="">Select date</option>
+                                <option value="Today , 1 april 2025">Today , 1 april 2025</option>
+                                <option value="Tomorrow , 2 april 2025">Tomorrow , 2 april 2025</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="form-select" id="lstcinema">
+                                <option >Select Cinema</option>
+                                <option >PVR Inorbit</option>
+                                <option >INOX GVK One</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="form-select" id="lsttime">
+                                <option >Select Timing </option>
+                                <option >2:00 pm </option>
+                                <option >10:00 pm</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <button onclick="BookClick()" id="btnBook" data-bs-dismiss="modal" class="btn btn-primary">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- booked container -->
+    <div id="summary-container" class="w-25 border border-3 border-info p-3 rounded rounded-3" style="display: none;" >
+        <div class="d-flex justify-content-between text-danger">
+            <span>
+                <h3 class=" mb-3">Booking Summary</h3>
+            </span>
+            <span class="bi bi bi-ticket-detailed"></span>
+        </div>
+
+        <img id="imgPoster" width="350px" height="400px">
+        
+
+        <div>
+            <dl class="row mt-3">
+                <dt class="col-3">Movie : </dt>
+                <dd class="col-9" id="lblmovie"></dd>
+                <dt class="col-3">Date : </dt>
+                <dd class="col-9" id="lbldate"></dd>
+                <dt class="col-3">Cinema : </dt>
+                <dd class="col-9" id="lblcinema"></dd>
+                <dt class="col-3">Time : </dt>
+                <dd class="col-9" id="lbltime"></dd>
+            </dl>
+        </div>
+
+        <button onclick="editBooking()" data-bs-target="#quick-booking" data-bs-toggle="modal" class="btn btn-warning bi bi-pen-fill w-100"> Edit Booking</button>
+    </div>
+</body>
+
+</html>
