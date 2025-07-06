@@ -14,9 +14,9 @@ function BookClick() {
     const poster = document.getElementById("imgPoster");
 
     if (movieName === "SIKANDAR") {
-        poster.src = "../public/images/sikandar.png";
+        poster.src = "images/sikandar.png";
     } else if (movieName === "BLACK BAG") {
-        poster.src = "../public/images/black-bag.png";
+        poster.src = "images/black-bag.png";
     } else {
         poster.src = ""; // Fallback for undefined or empty selection
     }
